@@ -6,9 +6,8 @@ from django.contrib.auth.validators import ASCIIUsernameValidator
 
 
 class User(AbstractBaseUser):
-    username_validator = ASCIIUsernameValidator()
     username = models.CharField(
-        max_length=64, unique=True, validators=[username_validator],)
+        max_length=64, unique=True,)
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
     email = models.CharField(max_length=64, unique=True)
