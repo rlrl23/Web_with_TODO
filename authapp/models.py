@@ -14,3 +14,9 @@ class User(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_manager = models.BooleanField(default=False)
     is_developer = models.BooleanField(default=False)
+
+    def __str__(self):
+        if self.is_manager:
+            return self.username+' - manager'
+        if self.is_developer:
+            return self.username+' - developer'
