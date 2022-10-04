@@ -17,5 +17,5 @@ class Todo(models.Model):
     text = models.TextField()
     created = models.DateTimeField(auto_now_add=True, editable=False)
     updated = models.DateTimeField(auto_now_add=True, editable=False)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     active = models.BooleanField(default=True)
