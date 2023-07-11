@@ -7,9 +7,12 @@ from django.contrib.auth.models import PermissionsMixin, UserManager
 from django.contrib.auth.hashers import make_password
 
 
-class User(AbstractBaseUser, PermissionsMixin):
+
+class User(AbstractBaseUser):
+    username_validator = ASCIIUsernameValidator()
+
     username = models.CharField(
-        max_length=64, unique=True,)
+        max_length=64, unique=True, validators=[username_validator],)
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
     email = models.CharField(max_length=64, unique=True)

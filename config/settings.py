@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'drf_yasg',
     'django_filters',
     'rest_framework',
-    'corsheaders',
     'authapp',
     'mainapp',
     'rest_framework.authtoken',
@@ -50,10 +49,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    "django.middleware.common.CommonMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -165,3 +163,4 @@ REST_FRAMEWORK = {
 GRAPHENE = {
     "SCHEMA": "mainapp.schema.schema"
 }
+
